@@ -1,3 +1,4 @@
 anaconda::celery==5.5.3
+conda-forge::click-didyoumean==0.3.1
 conda-forge::pytest
 conda-forge::pydantic

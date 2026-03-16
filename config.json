@@ -1,0 +1,95 @@
+{
+  "app": {},
+  "jobs": {
+    "israel": {
+      "phrase": "israel",
+      "job_type": "DOWNLOAD",
+      "command": "cd ..;cd DownloadReddit;conda run -n download_reddit_311 python run_download_reddits.py \"israel\" -d=\"2025-12-28\"",
+      "is_failed_if_error": true,
+      "next_jobs": [
+        {
+          "phrase": "israel",
+          "job_type": "INGESTION",
+          "command": "cd ..;cd ETLReddit;conda run -n etl_reddit_311 python run_ingestion.py \"israel\"",
+          "is_failed_if_error": true,
+          "next_jobs": [
+            {
+              "phrase": "israel",
+              "job_type": "ETL_POPULARITY",
+              "command": "cd ..;cd ETLReddit;conda run -n etl_reddit_311 python run_etl.py \"popularity\" \"israel\"",
+              "is_failed_if_error": false,
+              "next_jobs": []
+            },
+            {
+              "phrase": "israel",
+              "job_type": "ETL_SENTIMENT",
+              "command": "cd ..;cd ETLReddit;conda run -n etl_reddit_311 python run_etl.py \"sentiment\" \"israel\"",
+              "is_failed_if_error": false,
+              "next_jobs": []
+            }
+          ]
+        }
+      ]
+    },
+    "trump": {
+      "phrase": "trump",
+      "job_type": "DOWNLOAD",
+      "command": "cd ..;cd DownloadReddit;conda run -n download_reddit_311 python run_download_reddits.py \"trump\" -d=\"2025-12-28\"",
+      "is_failed_if_error": true,
+      "next_jobs": [
+        {
+          "phrase": "trump",
+          "job_type": "INGESTION",
+          "command": "cd ..;cd ETLReddit;conda run -n etl_reddit_311 python run_ingestion.py \"trump\"",
+          "is_failed_if_error": true,
+          "next_jobs": [
+            {
+              "phrase": "trump",
+              "job_type": "ETL_POPULARITY",
+              "command": "cd ..;cd ETLReddit;conda run -n etl_reddit_311 python run_etl.py \"popularity\" \"trump\"",
+              "is_failed_if_error": false,
+              "next_jobs": []
+            },
+            {
+              "phrase": "trump",
+              "job_type": "ETL_SENTIMENT",
+              "command": "cd ..;cd ETLReddit;conda run -n etl_reddit_311 python run_etl.py \"sentiment\" \"trump\"",
+              "is_failed_if_error": false,
+              "next_jobs": []
+            }
+          ]
+        }
+      ]
+    },
+    "iran": {
+      "phrase": "iran",
+      "job_type": "DOWNLOAD",
+      "command": "cd ..;cd DownloadReddit;conda run -n download_reddit_311 python run_download_reddits.py \"iran\" -d=\"2025-12-28\"",
+      "is_failed_if_error": true,
+      "next_jobs": [
+        {
+          "phrase": "iran",
+          "job_type": "INGESTION",
+          "command": "cd ..;cd ETLReddit;conda run -n etl_reddit_311 python run_ingestion.py \"iran\"",
+          "is_failed_if_error": true,
+          "next_jobs": [
+            {
+              "phrase": "iran",
+              "job_type": "ETL_POPULARITY",
+              "command": "cd ..;cd ETLReddit;conda run -n etl_reddit_311 python run_etl.py \"popularity\" \"iran\"",
+              "is_failed_if_error": false,
+              "next_jobs": []
+            },
+            {
+              "phrase": "iran",
+              "job_type": "ETL_SENTIMENT",
+              "command": "cd ..;cd ETLReddit;conda run -n etl_reddit_311 python run_etl.py \"sentiment\" \"iran\"",
+              "is_failed_if_error": false,
+              "next_jobs": []
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

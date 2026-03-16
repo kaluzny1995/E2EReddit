@@ -16,7 +16,7 @@ Activate the Anaconda environment via: `conda activate e2e_reddit_311`. The appl
 ## Setting up the RabbitMQ service
 The RabbitMQ message queueing service is needed for setting up cronjobs via _celery_ Python package. To set it up you need first to install [Docker](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/install/) services from the provided links.
 
-After installation create the `docker-compose.yml` file with the following content:
+After installation create the `docker-compose.yml` file with the following content ([reference here](https://medium.com/@kaloyanmanev/how-to-run-rabbitmq-in-docker-compose-e5baccc3e644)):
 
 ```
 services:
@@ -47,9 +47,9 @@ volumes:
   log:
     driver: local
 ```
-NOTE: You can set up your own default RabbitMQ username and password. By default both are set to: _mq_admin_.
+**NOTE**: You can set up your own default RabbitMQ username and password. By default, both are set to: _mq_admin_.
 Then run command:
 
     docker compose up -d
 
-Voilà. The RabbitMQ service is now set up. You can monitor logs in web browser via typing in: `localhost/15672` and then authenticating with the provided credentials in `docker-compose.yml` file.
+Voilà. The RabbitMQ service is now set up. You can monitor logs in web browser via typing in: [localhost/15672](localhost/15672) and then authenticating with the provided credentials in `docker-compose.yml` file.
