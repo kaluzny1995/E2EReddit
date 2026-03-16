@@ -3,7 +3,9 @@
 A Python 3.11 application for end-to-end process automation of reddits data engineering. The solution launches: download, ingestion and popularity as well as sentiment jobs.
 
 ## Installation
-Before downloading the repo you have to install [Anaconda](https://anaconda.org/). After installation clone the repo. Go into the downloaded repo directory.
+Before downloading the repo you have to install [Anaconda](https://anaconda.org/). After installation clone the repo. **IMPORTANT**: The repo must be downloaded to same directory as _DownloadReddit_ and _ETLReddit_, i.e. the `ls` command must return `DownloadReddit  ETLReddit` names within the results.
+
+Go into the downloaded repo directory.
 
     cd E2EReddit
 

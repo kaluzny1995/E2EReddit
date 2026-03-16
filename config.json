@@ -1,29 +1,88 @@
 {
-  "app": {},
+  "celery_app": {
+    "name": "e2e_app",
+    "username": "mq_admin",
+    "password": "mq_admin",
+    "host": "localhost",
+    "port": 5672,
+    "tasks": [
+      {
+        "phrase": "israel",
+        "hour": 0,
+        "minute": 50,
+        "name": "e2e_process_israel"
+      },
+      {
+        "phrase": "trump",
+        "hour": 1,
+        "minute": 10,
+        "name": "e2e_process_trump"
+      },
+      {
+        "phrase": "iran",
+        "hour": 1,
+        "minute": 30,
+        "name": "e2e_process_iran"
+      }
+    ]
+  },
+  "job": {
+    "max_checked_blank_lines": 4,
+    "max_logged_blank_lines": 2,
+    "download": {
+      "folder_name": "DownloadReddit",
+      "conda_env": "download_reddit_311",
+      "python_script": "run_download_reddits.py"
+    },
+    "ingestion": {
+      "folder_name": "ETLReddit",
+      "conda_env": "etl_reddit_311",
+      "python_script": "run_ingestion.py"
+    },
+    "etl": {
+      "folder_name": "ETLReddit",
+      "conda_env": "etl_reddit_311",
+      "python_script": "run_etl.py"
+    }
+  },
   "jobs": {
+
     "israel": {
       "phrase": "israel",
       "job_type": "DOWNLOAD",
-      "command": "cd ..;cd DownloadReddit;conda run -n download_reddit_311 python run_download_reddits.py \"israel\" -d=\"2025-12-28\"",
+      "command": {
+        "phrase": "israel",
+        "job_type": "DOWNLOAD",
+        "start_date": "2025-12-28"
+      },
       "is_failed_if_error": true,
       "next_jobs": [
         {
           "phrase": "israel",
           "job_type": "INGESTION",
-          "command": "cd ..;cd ETLReddit;conda run -n etl_reddit_311 python run_ingestion.py \"israel\"",
+          "command": {
+            "phrase": "israel",
+            "job_type": "INGESTION"
+          },
           "is_failed_if_error": true,
           "next_jobs": [
             {
               "phrase": "israel",
-              "job_type": "ETL_POPULARITY",
-              "command": "cd ..;cd ETLReddit;conda run -n etl_reddit_311 python run_etl.py \"popularity\" \"israel\"",
+              "job_type": "POPULARITY",
+              "command": {
+                "phrase": "israel",
+                "job_type": "POPULARITY"
+              },
               "is_failed_if_error": false,
               "next_jobs": []
             },
             {
               "phrase": "israel",
-              "job_type": "ETL_SENTIMENT",
-              "command": "cd ..;cd ETLReddit;conda run -n etl_reddit_311 python run_etl.py \"sentiment\" \"israel\"",
+              "job_type": "SENTIMENT",
+              "command": {
+                "phrase": "israel",
+                "job_type": "SENTIMENT"
+              },
               "is_failed_if_error": false,
               "next_jobs": []
             }
@@ -31,29 +90,43 @@
         }
       ]
     },
+
     "trump": {
       "phrase": "trump",
       "job_type": "DOWNLOAD",
-      "command": "cd ..;cd DownloadReddit;conda run -n download_reddit_311 python run_download_reddits.py \"trump\" -d=\"2025-12-28\"",
+      "command": {
+        "phrase": "trump",
+        "job_type": "DOWNLOAD",
+        "start_date": "2025-12-28"
+      },
       "is_failed_if_error": true,
       "next_jobs": [
         {
           "phrase": "trump",
           "job_type": "INGESTION",
-          "command": "cd ..;cd ETLReddit;conda run -n etl_reddit_311 python run_ingestion.py \"trump\"",
+          "command": {
+            "phrase": "trump",
+            "job_type": "INGESTION"
+          },
           "is_failed_if_error": true,
           "next_jobs": [
             {
               "phrase": "trump",
-              "job_type": "ETL_POPULARITY",
-              "command": "cd ..;cd ETLReddit;conda run -n etl_reddit_311 python run_etl.py \"popularity\" \"trump\"",
+              "job_type": "POPULARITY",
+              "command": {
+                "phrase": "trump",
+                "job_type": "POPULARITY"
+              },
               "is_failed_if_error": false,
               "next_jobs": []
             },
             {
               "phrase": "trump",
-              "job_type": "ETL_SENTIMENT",
-              "command": "cd ..;cd ETLReddit;conda run -n etl_reddit_311 python run_etl.py \"sentiment\" \"trump\"",
+              "job_type": "SENTIMENT",
+              "command": {
+                "phrase": "trump",
+                "job_type": "SENTIMENT"
+              },
               "is_failed_if_error": false,
               "next_jobs": []
             }
@@ -61,29 +134,43 @@
         }
       ]
     },
+
     "iran": {
       "phrase": "iran",
       "job_type": "DOWNLOAD",
-      "command": "cd ..;cd DownloadReddit;conda run -n download_reddit_311 python run_download_reddits.py \"iran\" -d=\"2025-12-28\"",
+      "command": {
+        "phrase": "iran",
+        "job_type": "DOWNLOAD",
+        "start_date": "2025-12-28"
+      },
       "is_failed_if_error": true,
       "next_jobs": [
         {
           "phrase": "iran",
           "job_type": "INGESTION",
-          "command": "cd ..;cd ETLReddit;conda run -n etl_reddit_311 python run_ingestion.py \"iran\"",
+          "command": {
+            "phrase": "iran",
+            "job_type": "INGESTION"
+          },
           "is_failed_if_error": true,
           "next_jobs": [
             {
               "phrase": "iran",
-              "job_type": "ETL_POPULARITY",
-              "command": "cd ..;cd ETLReddit;conda run -n etl_reddit_311 python run_etl.py \"popularity\" \"iran\"",
+              "job_type": "POPULARITY",
+              "command": {
+                "phrase": "iran",
+                "job_type": "POPULARITY"
+              },
               "is_failed_if_error": false,
               "next_jobs": []
             },
             {
               "phrase": "iran",
-              "job_type": "ETL_SENTIMENT",
-              "command": "cd ..;cd ETLReddit;conda run -n etl_reddit_311 python run_etl.py \"sentiment\" \"iran\"",
+              "job_type": "SENTIMENT",
+              "command": {
+                "phrase": "iran",
+                "job_type": "SENTIMENT"
+              },
               "is_failed_if_error": false,
               "next_jobs": []
             }
@@ -91,5 +178,6 @@
         }
       ]
     }
+
   }
 }

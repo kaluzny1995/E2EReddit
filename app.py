@@ -3,29 +3,21 @@ from celery.schedules import crontab
 import datetime as dt
 
 import util
-from model import Job
+from model import CeleryAppConfig, Job
 
-e2e_app = celery.Celery("e2e_app", broker="amqp://mq_admin:mq_admin@localhost//")
+config = CeleryAppConfig.from_config()
+e2e_app = celery.Celery(config.name, broker=config.get_rabbitmq_broker_string())
 
 
 @e2e_app.on_after_configure.connect
 def setup_periodic_tasks(sender: celery.Celery, **params) -> None:
     # sender.add_periodic_task(10., log_every_10_seconds.s("Celery app works."), name="celery_checkout")
-    sender.add_periodic_task(
-        crontab(hour=0, minute=50),
-        e2e_process.s("israel"),
-        name="e2e_process_israel"
-    )
-    sender.add_periodic_task(
-        crontab(hour=1, minute=10),
-        e2e_process.s("trump"),
-        name="e2e_process_trump"
-    )
-    sender.add_periodic_task(
-        crontab(hour=1, minute=30),
-        e2e_process.s("iran"),
-        name="e2e_process_iran"
-    )
+    for task in config.tasks:
+        sender.add_periodic_task(
+            crontab(hour=task.hour, minute=task.minute),
+            e2e_process.s(task.phrase),
+            name=task.name
+        )
 
 
 @e2e_app.task
