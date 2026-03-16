@@ -55,3 +55,55 @@ Then run command:
     docker compose up -d
 
 Voilà. The RabbitMQ service is now set up. You can monitor logs in web browser via typing in: [localhost/15672](localhost/15672) and then authenticating with the provided credentials in `docker-compose.yml` file.
+
+## Running the application
+Running the help command: `python run_e2e.py -h` yields the following: 
+
+```
+---- Reddits E2E process ----
+
+usage: run_e2e.py [-h] phrase
+
+Reddits E2E process Python 3.11 application.
+
+positional arguments:
+  phrase      phrase to run the E2E process for
+
+options:
+  -h, --help  show this help message and exit
+```
+The application run the whole E2E (_end-to-end_) process of reddits data engineering i.e.: raw data downloading, data ingestion and data ETL processing. Data visualization is handled independently directly in **Power BI** (or **Looker**) app.
+
+### Parameters overview
+1. **phrase** -- **_required_** -- word or sequence of words to run the E2E process for
+
+**NOTE**: Currently the E2E app is implemented for: _israel_, _iran_ and _trump_ phrases. If you want to launch the app for other phrase, you need to add a task to `config.json['celery_app']` as well as `config.json['jobs']`.
+
+### Launching
+To launch the app you need to type in:
+
+    python run_e2e.py "<phrase>"
+
+Where _phrase_ denotes a word (or words) to run the E2E process for.
+
+## Running via Celery app
+To run the whole solution via Celery cronjob service run the command:
+
+    celery -A app worker -B -l INFO
+
+The tasks will run automatically at the scheduled time.
+
+## E2E dataflow diagram
+![reddits_e2e_dataflow](/assets/images/reddits_e2e_dataflow.png)
+
+1. **DOWNLOAD job** -- raw reddit JSON files downloading and persisting them in folders
+2. **INGESTION job** -- cleaning raw data from JSON files and persisting them into database
+3. **POPULARITY ETL job** -- selecting popularity, processing reddit data and persisting into _popularity_ table
+4. **SENTIMENT ETL job** -- selecting texts, determining their sentiment values, processing and persisting into _sentiment_ table
+5. **VISUALIZATION** (independent project) -- loading data from database tables and visualizing them on Power BI/Looker dashboards.
+
+## See also
+
+1. [Downloading reddits documentation.](https://github.com/kaluzny1995/DownloadReddit/blob/master/README.md)
+2. [Reddits ingestion and ETL processes documentation.](https://github.com/kaluzny1995/ETLReddit/blob/master/README.md)
+3. [Reddits visualization documentation.](https://github.com/kaluzny1995/VisReddit/blob/main/README.md)
