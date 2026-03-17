@@ -8,20 +8,26 @@
     "tasks": [
       {
         "phrase": "israel",
-        "hour": 0,
-        "minute": 50,
+        "month": "*",
+        "day": "*",
+        "hour": 1,
+        "minute": 0,
         "name": "e2e_process_israel"
       },
       {
         "phrase": "trump",
+        "month": "*",
+        "day": "*",
         "hour": 1,
-        "minute": 10,
+        "minute": 20,
         "name": "e2e_process_trump"
       },
       {
         "phrase": "iran",
+        "month": "*",
+        "day": "*",
         "hour": 1,
-        "minute": 30,
+        "minute": 40,
         "name": "e2e_process_iran"
       }
     ]

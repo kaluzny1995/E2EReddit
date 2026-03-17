@@ -5,8 +5,10 @@ from pydantic import BaseModel
 
 class CeleryTask(BaseModel):
     phrase: str
-    hour: int
-    minute: int
+    month: int | str
+    day: int | str
+    hour: int | str
+    minute: int | str
     name: str
 
 class CeleryAppConfig(BaseModel):

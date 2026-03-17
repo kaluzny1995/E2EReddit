@@ -86,6 +86,18 @@ To launch the app you need to type in:
 
 Where _phrase_ denotes a word (or words) to run the E2E process for.
 
+### Testing
+To perform application unit testing simply run the command `pytest` in main project directory. The output should look like the following:
+```
+================================ test session starts ================================
+platform linux -- Python 3.11.15, pytest-9.0.2, pluggy-1.5.0
+rootdir: /home/jakub/PycharmProjects/E2EReddit
+collected 9 items                                                                                                                                                                      
+
+test/model/test_command.py .........                                           [100%]
+
+================================= 9 passed in 0.10s =================================
+```
 ## Running via Celery app
 To run the whole solution via Celery cronjob service run the command:
 
@@ -93,7 +105,7 @@ To run the whole solution via Celery cronjob service run the command:
 
 The tasks will run automatically at the scheduled time.
 
-## E2E dataflow diagram
+## E2E dataflow
 ![reddits_e2e_dataflow](/assets/images/reddits_e2e_dataflow.png)
 
 1. **DOWNLOAD job** -- raw reddit JSON files downloading and persisting them in folders
