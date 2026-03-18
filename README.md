@@ -20,7 +20,7 @@ The RabbitMQ message queueing service is needed for setting up cronjobs via _cel
 
 After installation create the `docker-compose.yml` file with the following content ([reference here](https://medium.com/@kaloyanmanev/how-to-run-rabbitmq-in-docker-compose-e5baccc3e644)):
 
-```
+```yaml
 services:
   rabbitmq:
     image: rabbitmq:latest
@@ -54,12 +54,12 @@ Then run command:
 
     docker compose up -d
 
-Voilà. The RabbitMQ service is now set up. You can monitor logs in web browser via typing in: [localhost/15672](localhost/15672) and then authenticating with the provided credentials in `docker-compose.yml` file.
+Voilà. The RabbitMQ service is now set up. You can monitor logs in web browser via typing in: [http://localhost:15672/](http://localhost:15672/) and then authenticating with the provided credentials in `docker-compose.yml` file.
 
 ## Running the application
 Running the help command: `python run_e2e.py -h` yields the following: 
 
-```
+```text
 ---- Reddits E2E process ----
 
 usage: run_e2e.py [-h] phrase
@@ -77,7 +77,35 @@ The application run the whole E2E (_end-to-end_) process of reddits data enginee
 ### Parameters overview
 1. **phrase** -- **_required_** -- word or sequence of words to run the E2E process for
 
-**NOTE**: Currently the E2E app is implemented for: _israel_, _iran_ and _trump_ phrases. If you want to launch the app for other phrase, you need to add a task to `config.json['celery_app']` as well as `config.json['jobs']`.
+**NOTE**: Currently the E2E app is implemented for: _israel_, _iran_ and _trump_ phrases. If you want to launch the app for other phrase, you need to add a task to `config.json['celery_app']['tasks']` the following section:
+
+```json
+{
+  "phrase": "<your phrase>",
+  "month": "month schedule",
+  "day": "day schedule",
+  "hour": "hour schedule",
+  "minute": "minute schedule",
+  "name": "<new task name>"
+}
+```
+**NOTE**: Reference to the celery crontab schedule avalaible [here](https://docs.celeryq.dev/en/main/userguide/periodic-tasks.html).
+
+You also have to add to `jobs.json` your new phrase subJSON like:
+```json
+{
+  "<your new phrase>": {
+    "phrase": "<your new phrase>",
+    "job_type": "<JOB TYPE>",
+    "command": {
+      "param1": "<job param 1>",
+      "param2": "<job param 2>"
+    },
+    "is_failed_if_error": "<should fail if command raised error?>",
+    "next_jobs": ["<next job to do>"]
+  }
+}
+```
 
 ### Launching
 To launch the app you need to type in:
@@ -88,7 +116,7 @@ Where _phrase_ denotes a word (or words) to run the E2E process for.
 
 ### Testing
 To perform application unit testing simply run the command `pytest` in main project directory. The output should look like the following:
-```
+```text
 ================================ test session starts ================================
 platform linux -- Python 3.11.15, pytest-9.0.2, pluggy-1.5.0
 rootdir: /home/jakub/PycharmProjects/E2EReddit
@@ -106,7 +134,8 @@ To run the whole solution via Celery cronjob service run the command:
 The tasks will run automatically at the scheduled time.
 
 ## E2E dataflow
-![reddits_e2e_dataflow](/assets/images/reddits_e2e_dataflow.png)
+
+![reddits_e2e_dataflow](/assets/images/reddits_e2e_dataflow.png "Reddits E2E dataflow.")
 
 1. **DOWNLOAD job** -- raw reddit JSON files downloading and persisting them in folders
 2. **INGESTION job** -- cleaning raw data from JSON files and persisting them into database

@@ -14,7 +14,8 @@ def setup_periodic_tasks(sender: celery.Celery, **params) -> None:
     # sender.add_periodic_task(crontab(minute="*/10", hour="*"), log_message.s("Celery app works. 10 mins checkout."), name="celery_10mins_checkout")
     for task in config.tasks:
         sender.add_periodic_task(
-            crontab(hour=util.to_utc(task.hour), minute=task.minute, day_of_month=task.day, month_of_year=task.month),
+            crontab(hour=util.to_utc(task.hour, task.timezone), minute=task.minute,
+                    day_of_month=task.day, month_of_year=task.month),
             e2e_process.s(task.phrase),
             name=task.name
         )

@@ -9,6 +9,7 @@ class CeleryTask(BaseModel):
     day: int | str
     hour: int | str
     minute: int | str
+    timezone: str
     name: str
 
 class CeleryAppConfig(BaseModel):

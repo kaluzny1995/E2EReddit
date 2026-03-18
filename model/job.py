@@ -6,13 +6,13 @@ from pydantic import BaseModel
 from typing import List
 
 import util
-from model import EJobType, JobConfig, Command
+from model import EJobType, JobConfig, CommandParams
 
 
 class Job(BaseModel):
     phrase: str
     job_type: EJobType
-    command: Command
+    command: CommandParams
     is_failed_if_error: bool
     next_jobs: List['Job']
 
@@ -58,7 +58,7 @@ class Job(BaseModel):
         logger.info(f"Starting {self.job_type.value} job for \"{self.phrase}\".")
 
         # run the command
-        command = self.command.parse_command()
+        command = self.command.parse_command(self.phrase, self.job_type)
         print(f"Executing command: {command}")
         logger.info(f"Executing command: {command}")
         process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
@@ -83,5 +83,5 @@ class Job(BaseModel):
     @staticmethod
     def from_config(phrase: str):
         """ Returns a Job instance from the config file """
-        with open("config.json", "r") as f:
-            return Job(**json.load(f)['jobs'][phrase])
+        with open("jobs.json", "r") as f:
+            return Job(**json.load(f)[phrase])

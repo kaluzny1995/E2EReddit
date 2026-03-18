@@ -12,6 +12,7 @@
         "day": "*",
         "hour": 1,
         "minute": 0,
+        "timezone": "Europe/Warsaw",
         "name": "e2e_process_israel"
       },
       {
@@ -19,7 +20,8 @@
         "month": "*",
         "day": "*",
         "hour": 1,
-        "minute": 20,
+        "minute": 10,
+        "timezone": "Europe/Warsaw",
         "name": "e2e_process_trump"
       },
       {
@@ -27,8 +29,63 @@
         "month": "*",
         "day": "*",
         "hour": 1,
-        "minute": 40,
+        "minute": 20,
+        "timezone": "Europe/Warsaw",
         "name": "e2e_process_iran"
+      },
+      {
+        "phrase": "PERSIAN",
+        "month": "*",
+        "day": "*",
+        "hour": 1,
+        "minute": 30,
+        "timezone": "Europe/Warsaw",
+        "name": "e2e_process_PERSIAN"
+      },
+      {
+        "phrase": "IsraelPalestine",
+        "month": "*",
+        "day": "*",
+        "hour": 1,
+        "minute": 40,
+        "timezone": "Europe/Warsaw",
+        "name": "e2e_process_IsraelPalestine"
+      },
+      {
+        "phrase": "AskTrumpSupporters",
+        "month": "*",
+        "day": "*",
+        "hour": 1,
+        "minute": 50,
+        "timezone": "Europe/Warsaw",
+        "name": "e2e_process_AskTrumpSupporters"
+      },
+      {
+        "phrase": "AskMiddleEast",
+        "month": "*",
+        "day": "*",
+        "hour": 2,
+        "minute": 10,
+        "timezone": "Europe/Warsaw",
+        "name": "e2e_process_AskMiddleEast"
+      },
+      {
+        "phrase": "farsi",
+        "month": "*",
+        "day": "*",
+        "hour": 2,
+        "minute": 20,
+        "timezone": "Europe/Warsaw",
+        "name": "e2e_process_farsi"
+      },
+      {
+        "phrase": "iranian",
+        "month": "*",
+        "day": "*",
+        "hour": 2,
+        "minute": 0,
+        "timezone": "Europe/Warsaw",
+        "name": "e2e_process_iranian"
       }
     ]
   },
@@ -50,140 +107,5 @@
       "conda_env": "etl_reddit_311",
       "python_script": "run_etl.py"
     }
-  },
-  "jobs": {
-
-    "israel": {
-      "phrase": "israel",
-      "job_type": "DOWNLOAD",
-      "command": {
-        "phrase": "israel",
-        "job_type": "DOWNLOAD",
-        "start_date": "2025-12-28"
-      },
-      "is_failed_if_error": true,
-      "next_jobs": [
-        {
-          "phrase": "israel",
-          "job_type": "INGESTION",
-          "command": {
-            "phrase": "israel",
-            "job_type": "INGESTION"
-          },
-          "is_failed_if_error": true,
-          "next_jobs": [
-            {
-              "phrase": "israel",
-              "job_type": "POPULARITY",
-              "command": {
-                "phrase": "israel",
-                "job_type": "POPULARITY"
-              },
-              "is_failed_if_error": false,
-              "next_jobs": []
-            },
-            {
-              "phrase": "israel",
-              "job_type": "SENTIMENT",
-              "command": {
-                "phrase": "israel",
-                "job_type": "SENTIMENT"
-              },
-              "is_failed_if_error": false,
-              "next_jobs": []
-            }
-          ]
-        }
-      ]
-    },
-
-    "trump": {
-      "phrase": "trump",
-      "job_type": "DOWNLOAD",
-      "command": {
-        "phrase": "trump",
-        "job_type": "DOWNLOAD",
-        "start_date": "2025-12-28"
-      },
-      "is_failed_if_error": true,
-      "next_jobs": [
-        {
-          "phrase": "trump",
-          "job_type": "INGESTION",
-          "command": {
-            "phrase": "trump",
-            "job_type": "INGESTION"
-          },
-          "is_failed_if_error": true,
-          "next_jobs": [
-            {
-              "phrase": "trump",
-              "job_type": "POPULARITY",
-              "command": {
-                "phrase": "trump",
-                "job_type": "POPULARITY"
-              },
-              "is_failed_if_error": false,
-              "next_jobs": []
-            },
-            {
-              "phrase": "trump",
-              "job_type": "SENTIMENT",
-              "command": {
-                "phrase": "trump",
-                "job_type": "SENTIMENT"
-              },
-              "is_failed_if_error": false,
-              "next_jobs": []
-            }
-          ]
-        }
-      ]
-    },
-
-    "iran": {
-      "phrase": "iran",
-      "job_type": "DOWNLOAD",
-      "command": {
-        "phrase": "iran",
-        "job_type": "DOWNLOAD",
-        "start_date": "2025-12-28"
-      },
-      "is_failed_if_error": true,
-      "next_jobs": [
-        {
-          "phrase": "iran",
-          "job_type": "INGESTION",
-          "command": {
-            "phrase": "iran",
-            "job_type": "INGESTION"
-          },
-          "is_failed_if_error": true,
-          "next_jobs": [
-            {
-              "phrase": "iran",
-              "job_type": "POPULARITY",
-              "command": {
-                "phrase": "iran",
-                "job_type": "POPULARITY"
-              },
-              "is_failed_if_error": false,
-              "next_jobs": []
-            },
-            {
-              "phrase": "iran",
-              "job_type": "SENTIMENT",
-              "command": {
-                "phrase": "iran",
-                "job_type": "SENTIMENT"
-              },
-              "is_failed_if_error": false,
-              "next_jobs": []
-            }
-          ]
-        }
-      ]
-    }
-
   }
 }
