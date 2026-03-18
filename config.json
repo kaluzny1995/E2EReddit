@@ -7,6 +7,33 @@
     "port": 5672,
     "tasks": [
       {
+        "phrase": "corgi",
+        "month": 1,
+        "day": 1,
+        "hour": 0,
+        "minute": 30,
+        "timezone": "Europe/Warsaw",
+        "name": "e2e_process_corgi"
+      },
+      {
+        "phrase": "BorderCollie",
+        "month": 1,
+        "day": 1,
+        "hour": 0,
+        "minute": 40,
+        "timezone": "Europe/Warsaw",
+        "name": "e2e_process_BorderCollie"
+      },
+      {
+        "phrase": "aussie",
+        "month": 1,
+        "day": 1,
+        "hour": 0,
+        "minute": 50,
+        "timezone": "Europe/Warsaw",
+        "name": "e2e_process_aussie"
+      },
+      {
         "phrase": "israel",
         "month": "*",
         "day": "*",
@@ -65,7 +92,7 @@
         "month": "*",
         "day": "*",
         "hour": 2,
-        "minute": 10,
+        "minute": 0,
         "timezone": "Europe/Warsaw",
         "name": "e2e_process_AskMiddleEast"
       },
@@ -74,7 +101,7 @@
         "month": "*",
         "day": "*",
         "hour": 2,
-        "minute": 20,
+        "minute": 10,
         "timezone": "Europe/Warsaw",
         "name": "e2e_process_farsi"
       },
@@ -83,7 +110,7 @@
         "month": "*",
         "day": "*",
         "hour": 2,
-        "minute": 0,
+        "minute": 20,
         "timezone": "Europe/Warsaw",
         "name": "e2e_process_iranian"
       }
