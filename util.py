@@ -1,6 +1,16 @@
+import os
+import contextlib
 import logging
 import pytz
 import datetime as dt
+
+
+def celerybeat_cleanup():
+    """ Celery beat cleanup before app start """
+    with contextlib.suppress(FileNotFoundError):
+        os.remove("celerybeat-schedule.bak")
+        os.remove("celerybeat-schedule.dat")
+        os.remove("celerybeat-schedule.dir")
 
 
 def setup_logger(name, log_file, level=logging.INFO):

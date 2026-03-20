@@ -11,6 +11,8 @@ e2e_app = celery.Celery(config.name, broker=config.get_rabbitmq_broker_string())
 
 @e2e_app.on_after_configure.connect
 def setup_periodic_tasks(sender: celery.Celery, **params) -> None:
+    util.celerybeat_cleanup()
+
     # sender.add_periodic_task(crontab(minute="*/10", hour="*"), log_message.s("Celery app works. 10 mins checkout."), name="celery_10mins_checkout")
     for task in config.tasks:
         sender.add_periodic_task(
