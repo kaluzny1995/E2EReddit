@@ -29,6 +29,13 @@
           },
           {
             "phrase": "israel",
+            "job_type": "EMOTION",
+            "command": {},
+            "is_failed_if_error": false,
+            "next_jobs": []
+          },
+          {
+            "phrase": "israel",
             "job_type": "VECTORIZATION",
             "command": {},
             "is_failed_if_error": false,
@@ -63,6 +70,13 @@
           {
             "phrase": "trump",
             "job_type": "SENTIMENT",
+            "command": {},
+            "is_failed_if_error": false,
+            "next_jobs": []
+          },
+          {
+            "phrase": "trump",
+            "job_type": "EMOTION",
             "command": {},
             "is_failed_if_error": false,
             "next_jobs": []
@@ -109,6 +123,13 @@
           },
           {
             "phrase": "iran",
+            "job_type": "EMOTION",
+            "command": {},
+            "is_failed_if_error": false,
+            "next_jobs": []
+          },
+          {
+            "phrase": "iran",
             "job_type": "VECTORIZATION",
             "command": {},
             "is_failed_if_error": false,
@@ -143,6 +164,13 @@
           {
             "phrase": "PERSIAN",
             "job_type": "SENTIMENT",
+            "command": {},
+            "is_failed_if_error": false,
+            "next_jobs": []
+          },
+          {
+            "phrase": "PERSIAN",
+            "job_type": "EMOTION",
             "command": {},
             "is_failed_if_error": false,
             "next_jobs": []
@@ -189,6 +217,13 @@
           },
           {
             "phrase": "IsraelPalestine",
+            "job_type": "EMOTION",
+            "command": {},
+            "is_failed_if_error": false,
+            "next_jobs": []
+          },
+          {
+            "phrase": "IsraelPalestine",
             "job_type": "VECTORIZATION",
             "command": {},
             "is_failed_if_error": false,
@@ -223,6 +258,13 @@
           {
             "phrase": "AskTrumpSupporters",
             "job_type": "SENTIMENT",
+            "command": {},
+            "is_failed_if_error": false,
+            "next_jobs": []
+          },
+          {
+            "phrase": "AskTrumpSupporters",
+            "job_type": "EMOTION",
             "command": {},
             "is_failed_if_error": false,
             "next_jobs": []
@@ -269,6 +311,13 @@
           },
           {
             "phrase": "iranian",
+            "job_type": "EMOTION",
+            "command": {},
+            "is_failed_if_error": false,
+            "next_jobs": []
+          },
+          {
+            "phrase": "iranian",
             "job_type": "VECTORIZATION",
             "command": {},
             "is_failed_if_error": false,
@@ -303,6 +352,13 @@
           {
             "phrase": "AskMiddleEast",
             "job_type": "SENTIMENT",
+            "command": {},
+            "is_failed_if_error": false,
+            "next_jobs": []
+          },
+          {
+            "phrase": "AskMiddleEast",
+            "job_type": "EMOTION",
             "command": {},
             "is_failed_if_error": false,
             "next_jobs": []
@@ -349,6 +405,13 @@
           },
           {
             "phrase": "farsi",
+            "job_type": "EMOTION",
+            "command": {},
+            "is_failed_if_error": false,
+            "next_jobs": []
+          },
+          {
+            "phrase": "farsi",
             "job_type": "VECTORIZATION",
             "command": {},
             "is_failed_if_error": false,
@@ -360,7 +423,7 @@
   },
 
   "corgi": {
-    "phrase": "farsi",
+    "phrase": "corgi",
     "job_type": "DOWNLOAD",
     "command": {
       "interval": "y"
@@ -368,27 +431,34 @@
     "is_failed_if_error": true,
     "next_jobs": [
       {
-        "phrase": "farsi",
+        "phrase": "corgi",
         "job_type": "INGESTION",
         "command": {},
         "is_failed_if_error": true,
         "next_jobs": [
           {
-            "phrase": "farsi",
+            "phrase": "corgi",
             "job_type": "POPULARITY",
             "command": {},
             "is_failed_if_error": false,
             "next_jobs": []
           },
           {
-            "phrase": "farsi",
+            "phrase": "corgi",
             "job_type": "SENTIMENT",
             "command": {},
             "is_failed_if_error": false,
             "next_jobs": []
           },
           {
-            "phrase": "farsi",
+            "phrase": "corgi",
+            "job_type": "EMOTION",
+            "command": {},
+            "is_failed_if_error": false,
+            "next_jobs": []
+          },
+          {
+            "phrase": "corgi",
             "job_type": "VECTORIZATION",
             "command": {},
             "is_failed_if_error": false,
@@ -400,7 +470,7 @@
   },
 
   "BorderCollie": {
-    "phrase": "farsi",
+    "phrase": "BorderCollie",
     "job_type": "DOWNLOAD",
     "command": {
       "interval": "y"
@@ -408,27 +478,34 @@
     "is_failed_if_error": true,
     "next_jobs": [
       {
-        "phrase": "farsi",
+        "phrase": "BorderCollie",
         "job_type": "INGESTION",
         "command": {},
         "is_failed_if_error": true,
         "next_jobs": [
           {
-            "phrase": "farsi",
+            "phrase": "BorderCollie",
             "job_type": "POPULARITY",
             "command": {},
             "is_failed_if_error": false,
             "next_jobs": []
           },
           {
-            "phrase": "farsi",
+            "phrase": "BorderCollie",
             "job_type": "SENTIMENT",
             "command": {},
             "is_failed_if_error": false,
             "next_jobs": []
           },
           {
-            "phrase": "farsi",
+            "phrase": "BorderCollie",
+            "job_type": "EMOTION",
+            "command": {},
+            "is_failed_if_error": false,
+            "next_jobs": []
+          },
+          {
+            "phrase": "BorderCollie",
             "job_type": "VECTORIZATION",
             "command": {},
             "is_failed_if_error": false,
@@ -440,7 +517,7 @@
   },
 
   "aussie": {
-    "phrase": "farsi",
+    "phrase": "aussie",
     "job_type": "DOWNLOAD",
     "command": {
       "interval": "y"
@@ -448,27 +525,34 @@
     "is_failed_if_error": true,
     "next_jobs": [
       {
-        "phrase": "farsi",
+        "phrase": "aussie",
         "job_type": "INGESTION",
         "command": {},
         "is_failed_if_error": true,
         "next_jobs": [
           {
-            "phrase": "farsi",
+            "phrase": "aussie",
             "job_type": "POPULARITY",
             "command": {},
             "is_failed_if_error": false,
             "next_jobs": []
           },
           {
-            "phrase": "farsi",
+            "phrase": "aussie",
             "job_type": "SENTIMENT",
             "command": {},
             "is_failed_if_error": false,
             "next_jobs": []
           },
           {
-            "phrase": "farsi",
+            "phrase": "aussie",
+            "job_type": "EMOTION",
+            "command": {},
+            "is_failed_if_error": false,
+            "next_jobs": []
+          },
+          {
+            "phrase": "aussie",
             "job_type": "VECTORIZATION",
             "command": {},
             "is_failed_if_error": false,
