@@ -32,8 +32,8 @@ def log_message(message: str) -> None:
 @e2e_app.task
 def e2e_process(phrase: str) -> None:
     """ E2E process for given phrase """
-    logger = util.setup_logger(name=f"e2e_celery_reddits_{phrase}",
-                               log_file=f"logs/celery_app/e2e_reddits_{phrase}_{dt.datetime.now().isoformat()}.log")
+    logger = util.setup_logger(name=f"e2e_celery_{phrase}",
+                               log_file=f"logs/celery_app/{phrase}/e2e_{phrase}_{dt.datetime.now().isoformat()}.log")
 
     job = Job.from_config(phrase)
     job.run(logger=logger)

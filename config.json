@@ -10,8 +10,8 @@
         "phrase": "corgi",
         "month": 1,
         "day": 1,
-        "hour": 0,
-        "minute": 30,
+        "hour": 5,
+        "minute": 0,
         "timezone": "Europe/Warsaw",
         "name": "e2e_process_corgi"
       },
@@ -19,8 +19,8 @@
         "phrase": "BorderCollie",
         "month": 1,
         "day": 1,
-        "hour": 0,
-        "minute": 40,
+        "hour": 6,
+        "minute": 20,
         "timezone": "Europe/Warsaw",
         "name": "e2e_process_BorderCollie"
       },
@@ -28,8 +28,8 @@
         "phrase": "aussie",
         "month": 1,
         "day": 1,
-        "hour": 0,
-        "minute": 50,
+        "hour": 6,
+        "minute": 40,
         "timezone": "Europe/Warsaw",
         "name": "e2e_process_aussie"
       },
@@ -37,7 +37,7 @@
         "phrase": "israel",
         "month": "*",
         "day": "*",
-        "hour": 1,
+        "hour": 7,
         "minute": 0,
         "timezone": "Europe/Warsaw",
         "name": "e2e_process_israel"
@@ -46,8 +46,8 @@
         "phrase": "trump",
         "month": "*",
         "day": "*",
-        "hour": 1,
-        "minute": 10,
+        "hour": 7,
+        "minute": 20,
         "timezone": "Europe/Warsaw",
         "name": "e2e_process_trump"
       },
@@ -55,8 +55,8 @@
         "phrase": "iran",
         "month": "*",
         "day": "*",
-        "hour": 1,
-        "minute": 20,
+        "hour": 7,
+        "minute": 40,
         "timezone": "Europe/Warsaw",
         "name": "e2e_process_iran"
       },
@@ -64,8 +64,8 @@
         "phrase": "PERSIAN",
         "month": "*",
         "day": "*",
-        "hour": 1,
-        "minute": 30,
+        "hour": 8,
+        "minute": 0,
         "timezone": "Europe/Warsaw",
         "name": "e2e_process_PERSIAN"
       },
@@ -73,8 +73,8 @@
         "phrase": "IsraelPalestine",
         "month": "*",
         "day": "*",
-        "hour": 1,
-        "minute": 40,
+        "hour": 8,
+        "minute": 20,
         "timezone": "Europe/Warsaw",
         "name": "e2e_process_IsraelPalestine"
       },
@@ -82,8 +82,8 @@
         "phrase": "AskTrumpSupporters",
         "month": "*",
         "day": "*",
-        "hour": 1,
-        "minute": 50,
+        "hour": 8,
+        "minute": 40,
         "timezone": "Europe/Warsaw",
         "name": "e2e_process_AskTrumpSupporters"
       },
@@ -91,7 +91,7 @@
         "phrase": "AskMiddleEast",
         "month": "*",
         "day": "*",
-        "hour": 2,
+        "hour": 9,
         "minute": 0,
         "timezone": "Europe/Warsaw",
         "name": "e2e_process_AskMiddleEast"
@@ -100,8 +100,8 @@
         "phrase": "farsi",
         "month": "*",
         "day": "*",
-        "hour": 2,
-        "minute": 10,
+        "hour": 9,
+        "minute": 20,
         "timezone": "Europe/Warsaw",
         "name": "e2e_process_farsi"
       },
@@ -109,8 +109,8 @@
         "phrase": "iranian",
         "month": "*",
         "day": "*",
-        "hour": 2,
-        "minute": 20,
+        "hour": 9,
+        "minute": 40,
         "timezone": "Europe/Warsaw",
         "name": "e2e_process_iranian"
       }

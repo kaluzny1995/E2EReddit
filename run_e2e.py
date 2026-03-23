@@ -16,8 +16,8 @@ def parse_args() -> argparse.Namespace:
 def main():
     args = parse_args()
 
-    logger = util.setup_logger(name=f"e2e_reddits_{args.phrase}",
-                               log_file=f"logs/e2e_reddits/e2e_reddits_{args.phrase}_{dt.datetime.now().isoformat()}.log")
+    logger = util.setup_logger(name=f"e2e_{args.phrase}",
+                               log_file=f"logs/e2e/{args.phrase}/e2e_{args.phrase}_{dt.datetime.now().isoformat()}.log")
 
     main_job = Job.from_config(args.phrase)
     main_job.run(logger=logger)
