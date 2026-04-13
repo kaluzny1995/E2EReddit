@@ -51,8 +51,8 @@ class Job(BaseModel):
         job_config = JobConfig.from_config()
 
         if logger is None:
-            logger = util.setup_logger(name=f"e2e_reddits_{self.phrase}",
-                                       log_file=f"logs/e2e_reddits/e2e_reddits_{self.phrase}_{dt.datetime.now().isoformat()}.log")
+            logger = util.setup_logger(name=f"e2e_job_{self.phrase}",
+                                       log_file=f"logs/e2e_job/{self.phrase}/e2e_job_{self.phrase}_{dt.datetime.now().isoformat()}.log")
 
         print(f"Starting {self.job_type.value} job for \"{self.phrase}\".")
         logger.info(f"Starting {self.job_type.value} job for \"{self.phrase}\".")

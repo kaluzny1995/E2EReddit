@@ -39,7 +39,15 @@
             "job_type": "VECTORIZATION",
             "command": {},
             "is_failed_if_error": false,
-            "next_jobs": []
+            "next_jobs": [
+              {
+                "phrase": "israel",
+                "job_type": "REDUCTION",
+                "command": {},
+                "is_failed_if_error": false,
+                "next_jobs": []
+              }
+            ]
           }
         ]
       }
@@ -86,7 +94,15 @@
             "job_type": "VECTORIZATION",
             "command": {},
             "is_failed_if_error": false,
-            "next_jobs": []
+            "next_jobs": [
+              {
+                "phrase": "trump",
+                "job_type": "REDUCTION",
+                "command": {},
+                "is_failed_if_error": false,
+                "next_jobs": []
+              }
+            ]
           }
         ]
       }
@@ -133,7 +149,15 @@
             "job_type": "VECTORIZATION",
             "command": {},
             "is_failed_if_error": false,
-            "next_jobs": []
+            "next_jobs": [
+              {
+                "phrase": "iran",
+                "job_type": "REDUCTION",
+                "command": {},
+                "is_failed_if_error": false,
+                "next_jobs": []
+              }
+            ]
           }
         ]
       }
@@ -180,7 +204,15 @@
             "job_type": "VECTORIZATION",
             "command": {},
             "is_failed_if_error": false,
-            "next_jobs": []
+            "next_jobs": [
+              {
+                "phrase": "PERSIAN",
+                "job_type": "REDUCTION",
+                "command": {},
+                "is_failed_if_error": false,
+                "next_jobs": []
+              }
+            ]
           }
         ]
       }
@@ -227,7 +259,15 @@
             "job_type": "VECTORIZATION",
             "command": {},
             "is_failed_if_error": false,
-            "next_jobs": []
+            "next_jobs": [
+              {
+                "phrase": "IsraelPalestine",
+                "job_type": "REDUCTION",
+                "command": {},
+                "is_failed_if_error": false,
+                "next_jobs": []
+              }
+            ]
           }
         ]
       }
@@ -274,7 +314,15 @@
             "job_type": "VECTORIZATION",
             "command": {},
             "is_failed_if_error": false,
-            "next_jobs": []
+            "next_jobs": [
+              {
+                "phrase": "AskTrumpSupporters",
+                "job_type": "REDUCTION",
+                "command": {},
+                "is_failed_if_error": false,
+                "next_jobs": []
+              }
+            ]
           }
         ]
       }
@@ -321,7 +369,15 @@
             "job_type": "VECTORIZATION",
             "command": {},
             "is_failed_if_error": false,
-            "next_jobs": []
+            "next_jobs": [
+              {
+                "phrase": "iranian",
+                "job_type": "REDUCTION",
+                "command": {},
+                "is_failed_if_error": false,
+                "next_jobs": []
+              }
+            ]
           }
         ]
       }
@@ -368,7 +424,15 @@
             "job_type": "VECTORIZATION",
             "command": {},
             "is_failed_if_error": false,
-            "next_jobs": []
+            "next_jobs": [
+              {
+                "phrase": "AskMiddleEast",
+                "job_type": "REDUCTION",
+                "command": {},
+                "is_failed_if_error": false,
+                "next_jobs": []
+              }
+            ]
           }
         ]
       }
@@ -415,7 +479,15 @@
             "job_type": "VECTORIZATION",
             "command": {},
             "is_failed_if_error": false,
-            "next_jobs": []
+            "next_jobs": [
+              {
+                "phrase": "farsi",
+                "job_type": "REDUCTION",
+                "command": {},
+                "is_failed_if_error": false,
+                "next_jobs": []
+              }
+            ]
           }
         ]
       }
@@ -462,7 +534,15 @@
             "job_type": "VECTORIZATION",
             "command": {},
             "is_failed_if_error": false,
-            "next_jobs": []
+            "next_jobs": [
+              {
+                "phrase": "corgi",
+                "job_type": "REDUCTION",
+                "command": {},
+                "is_failed_if_error": false,
+                "next_jobs": []
+              }
+            ]
           }
         ]
       }
@@ -509,7 +589,15 @@
             "job_type": "VECTORIZATION",
             "command": {},
             "is_failed_if_error": false,
-            "next_jobs": []
+            "next_jobs": [
+              {
+                "phrase": "BorderCollie",
+                "job_type": "REDUCTION",
+                "command": {},
+                "is_failed_if_error": false,
+                "next_jobs": []
+              }
+            ]
           }
         ]
       }
@@ -556,7 +644,15 @@
             "job_type": "VECTORIZATION",
             "command": {},
             "is_failed_if_error": false,
-            "next_jobs": []
+            "next_jobs": [
+              {
+                "phrase": "aussie",
+                "job_type": "REDUCTION",
+                "command": {},
+                "is_failed_if_error": false,
+                "next_jobs": []
+              }
+            ]
           }
         ]
       }

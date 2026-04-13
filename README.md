@@ -139,9 +139,12 @@ The tasks will run automatically at the scheduled time.
 
 1. **DOWNLOAD job** -- raw reddit JSON files downloading and persisting them in folders
 2. **INGESTION job** -- cleaning raw data from JSON files and persisting them into database
-3. **POPULARITY ETL job** -- selecting popularity, processing reddit data and persisting into _popularity_ table
-4. **SENTIMENT ETL job** -- selecting texts, determining their sentiment values, processing and persisting into _sentiment_ table
-5. **VISUALIZATION** (independent project) -- loading data from database tables and visualizing them on Power BI/Looker dashboards.
+3. **POPULARITY ETL job** -- selecting popularity, processing reddit data and persisting into _popularities_ table
+4. **SENTIMENT ETL job** -- selecting texts, determining their sentiment values, processing and persisting into _sentiments_ table
+5. **EMOTION ETL job** -- selecting texts, determining their emotion counts, processing and persisting into _emotions_ table
+6. **VECTORIZATION ETL job** -- selecting texts, converting them to vectors, processing and persisting into _vectors_ table
+7. **REDUCTION ETL job** -- selecting text vectors, performing dimensionality reduction task, processing and persisting into _reductions_ table
+8. **VISUALIZATION** (independent project) -- loading data from database tables and visualizing them on Power BI/Looker dashboards.
 
 ## See also
 
